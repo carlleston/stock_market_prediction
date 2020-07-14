@@ -42,7 +42,7 @@ To manager this project it was used the Analytics Solution Unified Method, It's 
 
 ## Architecture
 
-![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.jpg)
+![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.png)
 
 The cloud architecture of this project is very simple. to avoid data transition rates between different types of cloud computing companies, IBM chose to maintain all services.
 Despite having a supposed parallelism in our architecture, I will explain it sequentially.
