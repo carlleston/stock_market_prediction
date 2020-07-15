@@ -1,0 +1,23 @@
+# clone the repository
+# sudo pip install --upgrade virtualenv
+# na pasta abra o terminal e entre com virtualenv venv
+# para ativar o virtual env source venv/bin/activate
+# (venv) $pip install --upgrade -r requirements.txt
+# (venv) $ jupyter lab
+
+##### Main scientist Libs
+jupyterlab==2.1.0
+seaborn==0.9.0
+scipy==1.4.1
+
+##### Pacotes de ML/Statistical
+scikit-learn==0.22
+statsmodels==0.11.1
+pmdarima==1.6.1  
+joblib==0.15.1
+keras==2.3.1 
+h5py==2.10.0
+tensorflow==2.2.0rc0
+
+
+
