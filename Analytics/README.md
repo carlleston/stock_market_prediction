@@ -1,10 +1,10 @@
 # Analytics
 
 This part of the project was divided in 4 notebooks:
-* 1-EDA - Exploratory Data Analysis: It's used to start the exploratory data, identify the quality of the dataset, such as there is missing values, wrong measurements and the univariate statistcs.
-* 2-Transform_data: This notebook is used to gather and transform differents features that will be analyzed in the next step.
-* 3-Data_Analysis: Here we continue the exploratory analysis, but with a little more in-depth statistics, getting the correlation of all the features, Decomposing of the time series into trend, seasonal and residual, and applying the statistical hypothesis testing to ensure the non-stationarity.
-* 4-Models_comparison: It will compare the regression models, such as Linear Regression, Ridge Regression, Sarimax and Deep Learning LSTM Model.
+* 1-EDA - Exploratory Data Analysis: It's used to start the exploratory data, identify the quality of the dataset, such as there is missing values, wrong measurements and the univariate statistcs.  
+* 2-Transform_data: This notebook is used to gather and transform differents features that will be analyzed in the next step.  
+* 3-Data_Analysis: Here we continue the exploratory analysis, but with a little more in-depth statistics, getting the correlation of all the features, Decomposing of the time series into trend, seasonal and residual, and applying the statistical hypothesis testing to ensure the non-stationarity.  
+* 4-Models_comparison: It will compare the regression models, such as Linear Regression, Ridge Regression, Sarimax and Deep Learning LSTM Model.  
 
 ### Datasets
 
@@ -17,7 +17,7 @@ itau_news_tex.csv - Itaú's news and details about it.
 
 
 ### Columns
-The datasets used in this stage have the same fields, but bilingual. So to simple the explanation I divided using "/", that is represent the same meaning.
+The datasets used in this stage have the same fields, but bilingual. So, to simplify the explanation I divided using "/", but this represents the same meaning.
 
 Date/Data - It represents the day for the values in the time series.  
 Close/Ultimo - It's the last value of the day for the variable, The ITUB4 Close is the target variable.  
@@ -26,8 +26,8 @@ High/Maxima - The highest value of the day for that variable.
 Low/Mínima - The lowest value of the day for that variable.  
 Vol - Volume is simply the number of traders of a stock over a given period of time.  
 Var - It's the variation of the value during the day.  
-Link - Is the link where the news was extracted.  
-Class - Is the scenarios of the news, it's split in positive(optimistic), negative(pessimistic) and neutral.  
+Link - It's the link where the news was extracted.  
+Class - It's the scenarios of the news, it's split in positive(optimistic), negative(pessimistic) and neutral.  
 DayofWeek - Numeric Day of week for the time series values.  
 Weekofyear - Numeric week of year for the time series values.  
 Quarter - Quarter of year, three-month period.  
@@ -59,7 +59,7 @@ After clone this repository go to Analytics folder to create the Venv for this p
     $ source venv/bin/activate
 ```
 
-* *to deactivate the venv:* `$ deactivate`  
+* *to deactivate the venv:* `(venv) $ deactivate`  
 
 
 ## Using pip
