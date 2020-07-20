@@ -4,15 +4,26 @@ This is a Final Capstone Project of Coursera course Advanced Data Science create
 ## Navigation structure in the directory
 
 
-    ├── stock_market_prediction            # 
-    │   ├── Analytics                      # 
-    │   |   ├── xxxx                       # 
-    │   |   └── yyyy.ipynb                 # 
-    │   ├── Deployment                     # 
-    │   |   ├── ETLs_IBM          # Cada análise deve estar em uma pasta sepadara por data
-    |   |   |    └── Analyze_MMDDAAA.ipynb # Relatório
-    │   |   └── ... 
+    ├── stock_market_prediction            
+    │   ├── Analytics                                    # It's where the in-depth understanding of the dataset occurs
+    │   |   ├── Data                                     # Dataset used in the 1-4 Analytics steps
+    │   |   ├── Models                                   # Saved Regressions models generated in 4th step
+    │   |   ├── RNN News Classifier model                # Folder containing the RNN model and the datasets
+    │   |   |    ├── RNN_News_classifier.ipynb           # Creating the RNN Classifier model
+    |   |   |    └── ...
+    │   |   ├── 1-EDA - Exploratory Data Analysis.ipynb  # Starting the Exploratory data analysis
+    │   |   ├── 2-Transform_data.ipynb                   # Transform the dataset to continue the analysis
+    │   |   ├── 3-Data_Analysis.ipynb                    # Statistical hypothesis test and decomposition of the time serie
+    │   |   ├── 4-Models_comparison.ipynb                # Regression models comparison using the rmse and r_squared metrics
+    │   |   └── ...         
+    │   ├── Deployment                                   # It's where the scripts using on cloud are 
+    │   |   ├── 1-ETL_TS.ipynb                           # Extract, transform, load the Time series data
+    │   |   ├── 2-ETL_news_Studio.ipynb                  # Extract, transform, load the news data
+    │   |   ├── 3-Linear_reg_Spark_WStudio.ipynb         # Linear model using pyspark to running on IBM Watson Studio  
+    │   |   ├── ln_model.py                              # Linear model using pyspark to running on IBM Analytics Engine (using spark-submit)
+    │   |   └── ...         
     |   └── ... 
+    └── ... 
 
 
 ## Introduction
@@ -27,22 +38,22 @@ The stock market is nothing more than the environment in which publicly traded c
 
 ## Use Case
 
-This project has the general purpose (besides the main objective being the learning of an end-to-end machine learning project) to forecast the daily closing price of ITUB4 (Itaú Unibanco) using Itaú news published on the Infomoney website that will be classified by an RNN neural network algorithm generating categorical independent variables in positive (P), negative (N) and neutral (NN) scenarios, and also other independent variables such as the share price at its opening, dollar value in reais and the Ibovespa (which is in São Paulo as well as Dow Jones is in New York).
+This project has the general purpose (besides the main objective being the learning of an end-to-end machine learning project) to forecast the daily closing price of ITUB4 (Itaú Unibanco) using Itaú news published on the Infomoney website that will be classified by an RNN neural network algorithm generating categorical independent variables in positive (P), negative (N) and neutral (NN) scenarios, and also other independent variables such as the share price at its opening, dollar value in reais and the Ibovespa (similar the dow jones to são paulo).
 
 ## Solution
 
 The entire project is divided into 2 ways, the analytics and deployment. In the analytics branch we will study all data source, data exploratory data analysis, getting insights of the data, creating a Recurrent Neural Network News Classifier, testing differents kind regression and pick the best one. All of this way will create in Jupyter Notebook, so we don't need to use any cloud service, thus it will be local. 
 * to run everything smoothly, venv will be used for this repository.
 
-The deploy method will use a lot of IBM Cloud services, in there will be the ETL (Extract, transform and load) of the data, the Analytics Engine cluster for processing the models and all the storage to be avaliable to the stakeholders consume an API.
+The deploy method will use a lot of IBM Cloud services, in there will be the ETL (Extract, transform and load) of the data, the Analytics Engine cluster for process the models and all the storage to be avaliable to the stakeholders consume through API.
 
 To manager this project it was used the Analytics Solution Unified Method, It's like Crisp-DM (the standard for data science project) but extends with  tasks and activities on infrastructure, operations, project, deploymend and adds templates and guidelines to all the tasks (with some steps losing in the middle way, but I'm always trying to get them :D).
 
-![](https://github.com/carlleston/stock_market_prediction/blob/master/asum-process-detail.jpg)
+![](https://github.com/carlleston/stock_market_prediction/blob/master/asum-process-detail.jpg){ width="800" height="600" style="display: block; margin: 0 auto" }
 
 ## Architecture
 
-![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.png)
+![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.png){ width="800" height="600" style="display: block; margin: 0 auto" }
 
 The cloud architecture of this project is very simple. to avoid data transition rates between different types of cloud computing companies, IBM chose to maintain all services.
 Despite having a supposed parallelism in our architecture, I will explain it sequentially.
@@ -51,15 +62,11 @@ Despite having a supposed parallelism in our architecture, I will explain it seq
  Using Scrapy as a WebCrawler on the links we get, we managed to get the body of the site containing the news from it.
 With the RNN model already trained in the Analytics stage, we use the same saved in tf.learn to only classify the news and thus store it in the Cloud Object Storage.
 
-2 - JobSchedule - ELT Time Series: It has a Jobschedule for 8am, where it uses the Yahoo Finance API to extract the entire ITUB4 time series, IBovespa and the dollar price, storing in the Cloud Object Storage in sequence
+2 - JobSchedule - ELT Time Series: It has a Jobschedule for 8am, where it uses the Yahoo Finance API to extract the entire ITUB4 time series, IBovespa and the dollar value in reais, storing in the Cloud Object Storage in sequence.
 
 3 - SparkML Processing: This is where the magic happens, using IBM Analytics Engine, after selecting the model that best fits our purpose in the Analytics stage, a pyspark script was created where it uses SparkML to load the data from the previous steps, create the encoder of the news, and to scale the independent variables, after this pre-processing of the data, the regression model that performs the predictions is trained, saving in the hdfs itself in parquet format. Remembering that the whole process is triggered by Spark-Submit via ssh.
 
 4 - The processed data becoming available for consumption by the stakeholders through API.
 
 *all justifications for technology choices are in the Architectural Decisions Document (ADD)
-
-## Conclusion
-
-
 
