@@ -75,10 +75,12 @@ With the RNN model already trained in the Analytics stage, we use the same saved
 
 The general purpose of the project was to make an end-to-end Data Science project. A fully scalable end to end data integration, machine learning and deep learning pipelines using the most prominent and widely used frameworks and technologies like Apache Spark, scikit-learn, SparkML, TensorFlow, Keras everything implemented on cloud.
 
-Due the size of the Capstone Project, I'm sure I missed some explation that should be done, so I'm available to answer any questions in my e-mail: anthonycarlleston@gmail.com
+Due the size of the Capstone Project, if I missed some explation that should be done, I'm available to answer any questions in my e-mail: anthonycarlleston@gmail.com
 
 If you are interested in this course, the IBM Advanced Data Science is available in https://www.coursera.org/specializations/advanced-data-science-ibm
 
 
+
+That's all Folks.
 
 
