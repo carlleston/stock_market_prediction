@@ -49,11 +49,11 @@ The deploy method will use a lot of IBM Cloud services, in there will be the ETL
 
 To manager this project it was used the Analytics Solution Unified Method, It's like Crisp-DM (the standard for data science project) but extends with  tasks and activities on infrastructure, operations, project, deploymend and adds templates and guidelines to all the tasks (with some steps losing in the middle way, but I'm always trying to get them :D).
 
-![](https://github.com/carlleston/stock_market_prediction/blob/master/asum-process-detail.jpg){ width="800" height="600" style="display: block; margin: 0 auto" }
+![](https://github.com/carlleston/stock_market_prediction/blob/master/asum-process-detail.jpg)
 
 ## Architecture
 
-![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.png){ width="800" height="600" style="display: block; margin: 0 auto" }
+![](https://github.com/carlleston/stock_market_prediction/blob/master/architecture.png)
 
 The cloud architecture of this project is very simple. to avoid data transition rates between different types of cloud computing companies, IBM chose to maintain all services.
 Despite having a supposed parallelism in our architecture, I will explain it sequentially.
@@ -69,4 +69,16 @@ With the RNN model already trained in the Analytics stage, we use the same saved
 4 - The processed data becoming available for consumption by the stakeholders through API.
 
 *all justifications for technology choices are in the Architectural Decisions Document (ADD)
+
+
+## Final Considerations
+
+The general purpose of the project was to make an end-to-end Data Science project. A fully scalable end to end data integration, machine learning and deep learning pipelines using the most prominent and widely used frameworks and technologies like Apache Spark, scikit-learn, SparkML, TensorFlow, Keras everything implemented on cloud.
+
+Due the size of the Capstone Project, I'm sure I missed some explation that should be done, so I'm available to answer any questions in my e-mail: anthonycarlleston@gmail.com
+
+If you are interested in this course, the IBM Advanced Data Science is available in https://www.coursera.org/specializations/advanced-data-science-ibm
+
+
+
 
