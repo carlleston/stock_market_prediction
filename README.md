@@ -47,7 +47,7 @@ The entire project is divided into 2 ways, the analytics and deployment. In the 
 
 The deploy method will use a lot of IBM Cloud services, in there will be the ETL (Extract, transform and load) of the data, the Analytics Engine cluster for process the models and all the storage to be avaliable to the stakeholders consume through API.
 
-To manager this project it was used the Analytics Solution Unified Method, It's like Crisp-DM (the standard for data science project) but extends with  tasks and activities on infrastructure, operations, project, deploymend and adds templates and guidelines to all the tasks (with some steps losing in the middle way, but I'm always trying to get them :D).
+To manage this project it was used the Analytics Solution Unified Method, It's like Crisp-DM (the standard for data science project) but extends with  tasks and activities on infrastructure, operations, project, deploymend and adds templates and guidelines to all the tasks (with some steps losing in the middle way, but I'm always trying to get them :D).
 
 ![](https://github.com/carlleston/stock_market_prediction/blob/master/asum-process-detail.jpg)
 
