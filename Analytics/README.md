@@ -80,5 +80,5 @@ Now we have installed all the requeriments we can use Jupyter lab to run the not
 * https://datawookie.netlify.com/blog/2017/06/setting-up-jupyter-with-python-3-on-ubuntu/
 
 
-Congratz! Now you can to run all the notebooks without a problem! :D
+Congratz! Now you can run all the notebooks without a problem! :D
 
