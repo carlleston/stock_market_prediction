@@ -1,5 +1,6 @@
 # stock_market_prediction
-This is a Final Capstone Project of Coursera course Advanced Data Science create by IBM.
+
+This is a Capstone Project of the Specialization Advanced Data Science created by IBM.
 
 ## Navigation structure in the directory
 
