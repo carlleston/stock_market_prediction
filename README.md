@@ -2,6 +2,9 @@
 
 This is a Capstone Project of the Specialization Advanced Data Science created by IBM.
 
+
+For a quick explanation, watch the video of the presentation: https://youtu.be/2HRVgltJAY8
+
 ## Navigation structure in the directory
 
 
