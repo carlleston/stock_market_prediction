@@ -3,8 +3,7 @@
 This is a Capstone Project of the Specialization Advanced Data Science created by IBM.
 
 
-For a quick explanation, watch presentation video: https://youtu.be/2HRVgltJAY8
-
+For a quick explanation, watch presentation video: https://www.youtube.com/watch?v=7vjuzZR3Ob0
 ## Navigation structure in the directory
 
 
