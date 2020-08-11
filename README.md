@@ -61,11 +61,11 @@ To manage this project it was used the Analytics Solution Unified Method, It's l
 The cloud architecture of this project is very simple. to avoid data transition rates between different types of cloud computing companies, IBM chose to maintain all services.
 Despite having a supposed parallelism in our architecture, I will explain it sequentially.
 
-1 - JobSchedule - ELT news: It has a jobschedule for 10 am where using a Google Search API searches for the word ‘’ Itaú ”within the Infomoney website, in which 8 links will be returned.
+1 - JobSchedule - ETL news: It has a jobschedule for 10 am where using a Google Search API searches for the word ‘’ Itaú ”within the Infomoney website, in which 8 links will be returned.
  Using Scrapy as a WebCrawler on the links we get, we managed to get the body of the site containing the news from it.
 With the RNN model already trained in the Analytics stage, we use the same saved in tf.learn to only classify the news and thus store it in the Cloud Object Storage.
 
-2 - JobSchedule - ELT Time Series: It has a Jobschedule for 10 am, where it uses the Yahoo Finance API to extract the entire ITUB4 time series, IBovespa and the dollar value in reais, storing in the Cloud Object Storage in sequence.
+2 - JobSchedule - ETL Time Series: It has a Jobschedule for 10 am, where it uses the Yahoo Finance API to extract the entire ITUB4 time series, IBovespa and the dollar value in reais, storing in the Cloud Object Storage in sequence.
 
 3 - SparkML Processing: This is where the magic happens, using IBM Analytics Engine, after selecting the model that best fits our purpose in the Analytics stage, a pyspark script was created where it uses SparkML to load the data from the previous steps, create the encoder of the news, and to scale the independent variables, after this pre-processing of the data, the regression model that performs the predictions is trained, saving in the hdfs itself in parquet format. Remembering that the whole process is triggered by Spark-Submit via ssh.
 
